@@ -1,3 +1,4 @@
 export const ACTIONS = {
-    TEST: 'test'
+    TEST: 'test',
+    ADD_ITEM: 'add_item'
 }
