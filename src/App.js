@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+// import { useSelector, useDispatch } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import { ACTIONS } from './store/consts'
+
+// const useButtonClick = () => {
+//   const dispatch = useDispatch()
+//   const buttonClick = () => dispatch({ type: ACTIONS.TEST })
+//   return buttonClick
+// }
+
+export const App = () => {
+  // const data = useSelector(store => store.test)
+  // const buttonClick = useButtonClick()
+  // return <button onClick={buttonClick}>{data}</button>
+  return <div>aa</div>
 }
-
-export default App;
