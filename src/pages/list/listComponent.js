@@ -12,6 +12,7 @@ export const ListComponent = ({ list, onButtonCLick, onChangeText, inputText }) 
                 ))
             }
             <TextInput onChange={onChangeText} value={inputText} />
+            <AddButton onClick={onButtonCLick} />
         </>
     )
 }

@@ -4,10 +4,16 @@ import { useSelector, useDispatch } from "react-redux"
 import { actions } from "../../store/actions"
 import { useAddItemForm } from "../../hooks/useAddItemForm"
 
+const useButtonClick = () => {
+    const dispatch = useDispatch()
+    const buttonClick = val => dispatch(actions.addItem(val))
+    return buttonClick
+}
 
 export const ListContainer = () => {
     const list = useSelector(store => store.items)
 
+    const onSubmit = useButtonClick()
 
     const {
         value,
@@ -19,5 +25,6 @@ export const ListContainer = () => {
         list={list}
         onChangeText={handleChange}
         inputText={value}
+        onButtonCLick={handleSubmit}
     />
 }
