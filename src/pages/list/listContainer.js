@@ -10,10 +10,17 @@ const useButtonClick = () => {
     return buttonClick
 }
 
+const useButtonRemove = () => {
+    const dispatch = useDispatch()
+    const buttonClick = id => dispatch(actions.removeItem(id))
+    return buttonClick
+}
+
 export const ListContainer = () => {
     const list = useSelector(store => store.items)
 
     const onSubmit = useButtonClick()
+    const removeItem = useButtonRemove()
 
     const {
         value,
@@ -23,6 +30,7 @@ export const ListContainer = () => {
 
     return <ListComponent
         list={list}
+        removeItem={removeItem}
         onChangeText={handleChange}
         inputText={value}
         onButtonCLick={handleSubmit}

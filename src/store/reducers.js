@@ -19,5 +19,10 @@ export const reducer = handleActions({
                 ...draft.items,
                 payload
             ]
+        }),
+    [ACTIONS.REMOVE_ITEM]: (state, { payload }) =>
+        produce(state, draft => {
+            const removed = draft.items.filter(el => el.id !== payload)
+            draft.items = removed
         })
 }, defaultState)
