@@ -1,8 +1,11 @@
 import React from "react"
 import { useDispatch } from "react-redux"
+
 import { actions } from "../../store/actions"
-import { useAddItemForm } from "../../hooks/useAddItemForm"
-import { FormComponent } from "./formComponent"
+import { FormComponent } from "./addFormComponent"
+import { useItemForm } from "../../hooks/itemForm"
+
+
 
 const useButtonClick = () => {
     const dispatch = useDispatch()
@@ -10,14 +13,14 @@ const useButtonClick = () => {
     return buttonClick
 }
 
-export const FormContainer = () => {
+export const AddFormContainer = () => {
     const onSubmit = useButtonClick()
 
     const {
         value,
         handleChange,
         handleSubmit
-    } = useAddItemForm(onSubmit)
+    } = useItemForm(onSubmit)
 
     return <FormComponent
         onChangeText={handleChange}

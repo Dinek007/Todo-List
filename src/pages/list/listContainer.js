@@ -8,15 +8,23 @@ const useButtonRemove = () => {
     const buttonClick = id => dispatch(actions.removeItem(id))
     return buttonClick
 }
+const useButtonEdit = () => {
+    const dispatch = useDispatch()
+
+    const buttonClick = id => dispatch(actions.showEditForm(id))
+    return buttonClick
+}
 
 export const ListContainer = () => {
     const list = useSelector(store => store.items)
     const removeItem = useButtonRemove()
+    const editItem = useButtonEdit()
 
     return (
         <ListComponent
             list={list}
             removeItem={removeItem}
+            editItem={editItem}
         />
     )
 }

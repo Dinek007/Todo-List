@@ -1,12 +1,14 @@
 import React from 'react'
 import { ListContainer } from './pages/list/listContainer'
-import { FormContainer } from "./pages/form/formContainer"
+import { AddFormContainer } from "./pages/addForm/addFormContainer"
+import { EditFormContainer } from "./pages/editForm/editFormContainer"
 
 export const App = () => {
   return (
     <div>
       <ListContainer />
-      <FormContainer />
+      <AddFormContainer />
+      <EditFormContainer />
     </div>
   )
 }
