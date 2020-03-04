@@ -6,9 +6,10 @@ import { EditFormContainer } from "./pages/editForm/editFormContainer"
 export const App = () => {
   return (
     <div>
+
+      <EditFormContainer />
       <ListContainer />
       <AddFormContainer />
-      <EditFormContainer />
     </div>
   )
 }
