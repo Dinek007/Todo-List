@@ -1,22 +1,31 @@
 import React from "react"
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     root: {
         position: "relative",
         borderRadius: 3,
-        backgroundColor: "#666666",
-        border: 0,
-        fontSize: 10,
+        backgroundColor: palette.secondary.main,
+        borderRadiu: 0,
+        fontSize: "14px",
         float: "right",
         right: "5px",
-        boxShadow: '0 1px 5px 2px rgba(0, 0, 255, .4)',
-        color: 'white',
-        height: "35px",
-        margin: "10px"
+        color: palette.primary.light,
+        height: "50px",
+        marginTop: "13px",
+        marginLeft: "18px",
+        marginBottom: "10px",
+        marginRight: "5px",
+        [breakpoints.down('md')]: {
+            height: "38px",
+        },
+        [breakpoints.down('sm')]: {
+            height: "30px",
+        },
+
     },
-});
+}));
 
 export const EditButton = ({ onClick, label = "EDIT" }) => {
     const classes = useStyles();

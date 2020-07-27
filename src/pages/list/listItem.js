@@ -1,34 +1,42 @@
 import React from "react"
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import { RemoveButton } from "../../components"
 import { EditButton } from "../../components"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(({ palette, breakpoints }) => createStyles({
     root1: {
         float: "left",
-        backgroundColor: "#505050",
+        backgroundColor: palette.primary.main,
         position: "relative",
         margin: "12px",
         borderRadius: 5,
         boxShadow: '1px 1px 3px 3px rgba(0, 0, 0, .5)',
+
     },
     root2: {
         left: "10px",
         position: "relative",
         float: "left",
-        color: 'white',
+        color: palette.secondary.main,
         aligContent: "left",
         margin: "15px",
+        fontSize: "30px",
+        [breakpoints.down('md')]: {
+            fontSize: "23px",
+        },
+        [breakpoints.down('sm')]: {
+            fontSize: "18px",
+        },
     },
     root3: {
         position: "relative",
         float: "right",
         alignItems: "content",
     },
-});
+}));
 
 export const ListItem = ({ label, id, removeButtonClick, editButtonClick }) => {
     const removeItem = () => {
@@ -39,7 +47,7 @@ export const ListItem = ({ label, id, removeButtonClick, editButtonClick }) => {
     }
     const classes = useStyles();
 
-    return <Grid item xs="12" sm="12" className={classes.root1}>
+    return <Grid className={classes.root1}>
         <Typography className={classes.root2}>{label}</Typography>
         <div className={classes.root3}>
             <RemoveButton onClick={removeItem} />
