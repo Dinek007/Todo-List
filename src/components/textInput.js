@@ -7,11 +7,11 @@ const useStyles = makeStyles({
         borderRadius: 3,
 
         border: 0,
-
+        width: "60%",
         display: "flex",
         color: 'white',
         height: "30px",
-        margin: "0px"
+        margin: "0px",
     },
 });
 
